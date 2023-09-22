@@ -1,0 +1,23 @@
+.navbar2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 3;
+  background-color: #0f4e0e;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding-right: 8px;
+  
+}
+
+.icon_menu{
+  margin-left: 20px;
+  cursor: pointer;
+}
+.logo{
+  margin-left: 110px;
+}
+

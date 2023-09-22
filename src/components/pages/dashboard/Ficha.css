@@ -1,0 +1,14 @@
+.text-field-bold {
+  font-weight: bold !important;
+}
+.without-padding label {
+  transform: translate(14px, 7px) scale(1);
+}
+
+.without-padding input {
+  padding: 15px;
+}
+
+.header-flex{
+    font-weight: bold !important; 
+}

@@ -1,0 +1,16 @@
+.div-row-button {
+  display: flex;
+  position: relative;
+  top: 70px;
+  left: 225px;
+  gap: 20px;
+  width: 80%;
+
+}
+@media (max-width: 767px) {
+  .div-row-button {
+    width: 90%;
+    left: 25px;
+    flex-wrap: wrap;
+  }
+}

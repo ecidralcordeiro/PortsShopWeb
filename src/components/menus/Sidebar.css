@@ -1,0 +1,29 @@
+
+.SideBarNav {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 200px;
+  height: 100vh;
+  top: 50px;
+  z-index: 3;
+}
+
+.SideBarWrap {
+  background-color: #6bac82;
+  scroll-behavior: initial;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.35) 10px 12px 15px;
+  overflow-y: auto;
+}
+
+
+.icon_menu{
+  z-index: 5;
+  position: fixed;
+  left: 5px;
+  top: 10px;
+  cursor: pointer;
+}
+
+
