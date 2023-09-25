@@ -3,7 +3,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import Sidebar from "../../components/menus/SideBar";
 import blogFetch from "../../axios/config";
 import Navbar from "../../components/menus/Navbar";
-import RegisterCategory from "./RegisterCategory";
+import RegisterCategory from "./RegisterBranch";
 import {
   Box,
   Button,
@@ -16,24 +16,24 @@ import {
   Modal,
 } from "@mui/material";
 import "../../styles/Style.css";
-import { ICategory } from "./CategoryInterface";
+import { IBranch } from "./BranchInterface";
 
-export default function Category() {
-  const [category, setCategory] = useState<ICategory[]>([]);
+export default function Branch() {
+  const [branch, setBranch] = useState<IBranch[]>([]);
   const [showModal, setShowModal] = useState(false);
-  const [categoryId, setCategoryId] = useState(0);
+  const [branchId, setBranchId] = useState(0);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    getCategory();
+    getBranch();
   }, []);
 
-  const getCategory = async () => {
+  const getBranch = async () => {
     setLoading(true);
     try {
-      let response = await blogFetch.get(`/category`);
+      let response = await blogFetch.get(`/branch`);
       let data = response.data;
-      setCategory(data);
+      setBranch(data);
     } catch (error) {
       console.error(error);
     } finally {
@@ -64,7 +64,7 @@ export default function Category() {
             backgroundColor: "white",
           }}
         >
-          <RegisterCategory id={categoryId} />
+          <RegisterCategory id={branchId} />
         </Box>
       </Modal>
     );
@@ -77,7 +77,7 @@ export default function Category() {
       <div className="app_body">
         <Button
           onClick={() => {
-            setCategoryId(0);
+            setBranchId(0);
             setShowModal(true);
           }}
         >
@@ -94,21 +94,21 @@ export default function Category() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {!!category &&
-                category.map((category) => (
+              {!!branch &&
+                branch.map((branch) => (
                   <TableRow
-                    key={category.id}
+                    key={branch.id}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
                     <TableCell component="th" scope="row">
-                      {category.id}
+                      {branch.id}
                     </TableCell>
-                    <TableCell>{category.name}</TableCell>
+                    <TableCell>{branch.name}</TableCell>
                     <TableCell></TableCell>
                     <TableCell align="right">
                       <EditIcon
                         onClick={() => {
-                          setCategoryId(category.id);
+                          setBranchId(branch.id);
                           setShowModal(true);
                         }}
                       />

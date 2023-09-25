@@ -4,6 +4,7 @@ import Login from "./pages/login/Login";
 import NotFound from "./components/Notfound";
 import Category from "./pages/category/Category";
 import PrivateRoute from "./PrivateRoute";
+import Branch from "./pages/brach/Branch";
 
 const Rotas = () => {
   return (
@@ -14,6 +15,15 @@ const Rotas = () => {
           element={
             <PrivateRoute>
               <Dashboard />
+            </PrivateRoute>
+          }
+          exact
+        />
+        <Route
+          path="/Branch"
+          element={
+            <PrivateRoute>
+              <Branch />
             </PrivateRoute>
           }
           exact
