@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import Dashboard from "./components/pages/dashboard/Dashboard";
-import Login from "./components/pages/login/Login";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Login from "./pages/login/Login";
 import NotFound from "./components/Notfound";
-import Category from "./components/pages/category/Category";
+import Category from "./pages/category/Category";
 import PrivateRoute from "./PrivateRoute";
 
 const Rotas = () => {
@@ -19,7 +19,14 @@ const Rotas = () => {
           exact
         />
         <Route
-          path="/bloc"
+          path="/login"
+          element={
+              <Login />
+          }
+          exact
+        />
+        <Route
+          path="/Category"
           element={
             <PrivateRoute>
               <Category />
@@ -28,7 +35,7 @@ const Rotas = () => {
           exact
         />
         <Route path="/404" element={<NotFound />} exact />
-        <Route path="*" element={<Dashboard />} />
+        <Route path="*" element={<Login />} />
       </Routes>
     </div>
   );

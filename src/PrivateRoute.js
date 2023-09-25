@@ -3,7 +3,6 @@ import { getCookie } from "./section/cookie";
 
 const PrivateRoute = ({ children }) => {
   const valid = getCookie("login");
-  return children;
   if (valid) {
     return children;
   } else {

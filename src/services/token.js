@@ -6,15 +6,14 @@ import { getCookie, setCookie } from "../section/cookie.js";
 const getToken = async () => {
   try {
     const userData = {
-      USR_userName: user,
-      USR_password: password,
-      USR_register: ""
+      email: user,
+      password: password
     };
 
     const response = await blogFetch.post("/token", userData);
     let token = response.data.token;  
 
-    setCookie("token", token, 7);
+    setCookie("token", token, 7); 
     setCookie("login", true, 7);
     
     console.log("token: " + token )

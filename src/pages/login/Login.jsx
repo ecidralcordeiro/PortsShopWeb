@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import LoadingButton from "@mui/lab/LoadingButton";
-import { Context } from "../../../context/AuthContext";
+import { Context } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { setUserGlobal, setPasswordGlobal } from "../../../constantes";
+import { setUserGlobal, setPasswordGlobal } from "../../constantes";
 import "./Login.css";
 
 const Login = () => {
